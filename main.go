@@ -156,7 +156,10 @@ func (this *KubernetesWebHook) TokenHandler(w http.ResponseWriter, r *http.Reque
 
 func main() {
 	kubernetesWebHook := new(KubernetesWebHook)
+	// https://k8s.eceasy.cn/token?action=ReDeploy&namespace=default&resource=deployments&name=DEPLOYMENT_NAME
 	http.HandleFunc("/hook", kubernetesWebHook.HookHandler)
+
+	// https://k8s.eceasy.cn/hook?name=DEPLOYMENT_NAME&token=TOKEN
 	http.HandleFunc("/token", kubernetesWebHook.TokenHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
