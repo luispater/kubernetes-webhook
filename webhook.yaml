@@ -52,7 +52,7 @@ spec:
     spec:
       serviceAccountName: kubernetes-webhook-service-account
       containers:
-        - image: 'eceasy/kubernetes-webhook:1.0.0'
+        - image: 'eceasy/kubernetes-webhook:1.1.4'
           imagePullPolicy: Always
           name: kubernetes-webhook
           ports:
