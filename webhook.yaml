@@ -10,8 +10,8 @@ kind: ClusterRole
 metadata:
   name: kubernetes-webhook-service-account-role
 rules:
-  - apiGroups: ["apps"]
-    resources: ["deployments", "daemonsets", "statefulsets"]
+  - apiGroups: ["", "apps"]
+    resources: ["deployments", "daemonsets", "statefulsets", "secrets"]
     verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 
 ---

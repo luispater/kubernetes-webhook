@@ -7,8 +7,8 @@ mixed:main.go
 	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -a -installsuffix cgo -o webhook.arm64.linux main.go
 	docker build -t eceasy/kubernetes-webhook:arm64 -f arm64.Dockerfile .
 	docker push eceasy/kubernetes-webhook:arm64
-	docker manifest create eceasy/kubernetes-webhook:1.0.0 eceasy/kubernetes-webhook:amd64 eceasy/kubernetes-webhook:arm64
-	docker manifest push --purge eceasy/kubernetes-webhook:1.0.0
+	docker manifest create eceasy/kubernetes-webhook:1.1.4 eceasy/kubernetes-webhook:amd64 eceasy/kubernetes-webhook:arm64
+	docker manifest push --purge eceasy/kubernetes-webhook:1.1.4
 	@rm -f webhook.amd64.linux webhook.arm64.linux
 
 
